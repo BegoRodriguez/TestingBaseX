@@ -6,6 +6,7 @@
         <precio>19.99</precio>
         <categoria>Ropa</categoria>
         <disponibilidad>En stock</disponibilidad>
+        <unidades>10</unidades>
         <imagen>https://ejemplo.com/imagen1.jpg</imagen>
     </producto>
     <producto codigo="P002">
@@ -14,6 +15,7 @@
         <precio>39.99</precio>
         <categoria>Ropa</categoria>
         <disponibilidad>En stock</disponibilidad>
+        <unidades>1</unidades>
         <imagen>https://ejemplo.com/imagen2.jpg</imagen>
     </producto>
     <producto codigo="P003">
@@ -22,6 +24,7 @@
         <precio>59.99</precio>
         <categoria>Zapatos</categoria>
         <disponibilidad>Agotado</disponibilidad>
+        <unidades>0</unidades>
         <imagen>https://ejemplo.com/imagen3.jpg</imagen>
     </producto>
     <producto codigo="P004">
@@ -30,6 +33,7 @@
         <precio>29.99</precio>
         <categoria>Accesorios</categoria>
         <disponibilidad>En stock</disponibilidad>
+        <unidades>6</unidades>
         <imagen>https://ejemplo.com/imagen4.jpg</imagen>
     </producto>
     <producto codigo="P005">
@@ -38,6 +42,7 @@
         <precio>79.99</precio>
         <categoria>Relojes</categoria>
         <disponibilidad>En stock</disponibilidad>
+        <unidades>4</unidades>
         <imagen>https://ejemplo.com/imagen5.jpg</imagen>
     </producto>
 </tienda>

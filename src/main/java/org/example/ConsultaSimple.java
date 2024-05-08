@@ -17,7 +17,7 @@ import org.basex.query.value.item.*;
  *
  * @author BaseX Team 2005-24, BSD License
  */
-public final class RunQueriesCatalog {
+public final class ConsultaSimple {
     /** Database context. */
     static Context context = new Context();
 
@@ -35,7 +35,7 @@ public final class RunQueriesCatalog {
         /*String query =
                 "for $x in doc('src/main/resources/xml/catalogo.xml')//Producto return data($x)";*/
         String query =
-                "for $x in doc('src/main/resources/xml/productos.xml')//nombre return data($x)";
+                "for $x in doc('src/main/resources/xml/productos.xml')//producto return data($x)";
 
         // Process the query by using the database command
         System.out.println("\n* Use the database command:");
@@ -110,13 +110,16 @@ public final class RunQueriesCatalog {
 
             /* Nos llevamos los datos a un arrayList */
             ArrayList<String> productos = new ArrayList<String>();
+            ArrayList<Object> productos2 = new ArrayList<Object>();
             // Iterate through all items and serialize
             for(Item item; (item = iter.next()) != null;) {
                 System.out.println(item.toJava());
                 productos.add(item.toString());
+                productos2.add(item.toJava());
             }
 
-            System.out.println(productos);
+            System.out.println("Objetos String" + productos);
+            System.out.println("Objetos Java " + productos2);
         }
     }
 
@@ -134,6 +137,7 @@ public final class RunQueriesCatalog {
 
             // Store the pointer to the result in an iterator:
             Iter iter = processor.iter();
+            ArrayList<Producto> productos = new ArrayList<Producto>();
 
             // Create a serializer instance
             try(Serializer ser = processor.serializer(System.out)) {
