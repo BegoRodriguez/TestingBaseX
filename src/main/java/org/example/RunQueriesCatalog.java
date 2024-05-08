@@ -32,10 +32,10 @@ public final class RunQueriesCatalog {
         System.out.println("=== RunQueries ===");
 
         // Evaluate the specified XQuery
-        /*String query =
-                "for $x in doc('src/main/resources/xml/catalogo.xml')//Producto return data($x)";*/
         String query =
-                "for $x in doc('src/main/resources/xml/productos.xml')//nombre return data($x)";
+                "for $x in doc('src/main/resources/xml/catalogo.xml')//producto return data($x)";
+        /*String query =
+                "for $x in doc('src/main/resources/xml/productos.xml')//nombre return data($x)";*/
 
         // Process the query by using the database command
         System.out.println("\n* Use the database command:");

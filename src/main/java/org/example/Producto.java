@@ -2,23 +2,46 @@ package org.example;
 
 import java.io.Serializable;
 
+import jakarta.persistence.*;
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "productos")
 public class Producto implements Serializable {
 
-    String codigo;
-    String nombre;
-    double precio;
-    String categoria;
-    int unidades;
+    @Id
+    @GenericGenerator(name="incrementId",strategy="increment") @GeneratedValue(generator="incrementId")
+    @Column(name = "producto_id") private int codigo;
+    @Column(name = "nombre") private String nombre;
+    @Column(name = "precio") private double precio;
+    @Column(name = "categoria") private String categoria;
+    @Column(name = "unidades") private int unidades;
 
-    public Producto(String codigo, String nombre, double precio, String categoria, int unidades) {
-        this.codigo = codigo;
+    /* Como es autoincremental no asignamos codigo para persistir en Hibernate */
+    public Producto(String nombre, double precio, String categoria, int unidades) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.categoria = categoria;
+        this.unidades = unidades;
     }
 
-    public String getCodigo() {
+    /* Constructor vacío necesario para realizar consultas en Hibernate */
+    public Producto(){}
+
+    /* Necesitamos este constructor para leer del XML */
+    public Producto(int codigo, String nombre, double precio, String categoria, int unidades) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.categoria = categoria;
+        this.unidades = unidades;
+    }
+
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 

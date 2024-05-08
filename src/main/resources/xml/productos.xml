@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tienda>
-    <producto codigo="P001">
+    <producto codigo="1">
         <nombre>Camiseta de manga corta</nombre>
         <descripcion>Camiseta de algodón para hombre, color negro</descripcion>
         <precio>19.99</precio>
@@ -9,7 +9,7 @@
         <unidades>10</unidades>
         <imagen>https://ejemplo.com/imagen1.jpg</imagen>
     </producto>
-    <producto codigo="P002">
+    <producto codigo="2">
         <nombre>Pantalón vaquero</nombre>
         <descripcion>Pantalón vaquero para mujer, corte recto</descripcion>
         <precio>39.99</precio>
@@ -18,7 +18,7 @@
         <unidades>1</unidades>
         <imagen>https://ejemplo.com/imagen2.jpg</imagen>
     </producto>
-    <producto codigo="P003">
+    <producto codigo="3">
         <nombre>Zapatillas deportivas</nombre>
         <descripcion>Zapatillas deportivas unisex, color blanco</descripcion>
         <precio>59.99</precio>
@@ -27,7 +27,7 @@
         <unidades>0</unidades>
         <imagen>https://ejemplo.com/imagen3.jpg</imagen>
     </producto>
-    <producto codigo="P004">
+    <producto codigo="4">
         <nombre>Bolso de mano</nombre>
         <descripcion>Bolso de mano para mujer, estilo elegante</descripcion>
         <precio>29.99</precio>
@@ -36,7 +36,7 @@
         <unidades>6</unidades>
         <imagen>https://ejemplo.com/imagen4.jpg</imagen>
     </producto>
-    <producto codigo="P005">
+    <producto codigo="5">
         <nombre>Reloj de pulsera</nombre>
         <descripcion>Reloj de pulsera unisex, correa de acero inoxidable</descripcion>
         <precio>79.99</precio>
