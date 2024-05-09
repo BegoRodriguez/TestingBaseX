@@ -1,5 +1,6 @@
-package org.example;
+package xml;
 
+import modelo.Producto;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -18,38 +19,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class TrabajarXMLconDOM {
-
-    public static void main(String[] args) {
-        ArrayList<Producto> productos = leerXMLConDOM();
-        escribirXMLconDOM(productos);
-        persistirenBD(productos);
-    }
-
-    public static void persistirenBD(ArrayList<Producto> productos) {
-
-        // Create Configuration
-        Configuration configuration = new Configuration();
-        configuration.configure("hibernate.cfg.xml");
-        configuration.addAnnotatedClass(Producto.class);
-
-        // Create Session Factory and auto-close with try-with-resources.
-        try (SessionFactory sessionFactory
-                     = configuration.buildSessionFactory()) {
-
-            // Initialize Session Object
-            Session session = sessionFactory.openSession();
-            session.beginTransaction();
-            Iterator<Producto> it = productos.iterator();
-            while (it.hasNext()) {
-                Producto p = it.next();
-                session.persist(new Producto(p.getNombre(), p.getPrecio(), p.getCategoria(), p.getUnidades()));
-            }
-
-            session.getTransaction().commit();
-
-        }
-    }
+public class ParseadorProductos {
 
     public static ArrayList<Producto> leerXMLConDOM(){
         // Definimos un array de productos por si queremos trabajar con ellos en nuestra app
@@ -159,6 +129,31 @@ public class TrabajarXMLconDOM {
 
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public static void persistirenBD(ArrayList<Producto> productos) {
+
+        // Create Configuration
+        Configuration configuration = new Configuration();
+        configuration.configure("hibernate.cfg.xml");
+        configuration.addAnnotatedClass(Producto.class);
+
+        // Create Session Factory and auto-close with try-with-resources.
+        try (SessionFactory sessionFactory
+                     = configuration.buildSessionFactory()) {
+
+            // Initialize Session Object
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+            Iterator<Producto> it = productos.iterator();
+            while (it.hasNext()) {
+                Producto p = it.next();
+                session.persist(new Producto(p.getNombre(), p.getPrecio(), p.getCategoria(), p.getUnidades()));
+            }
+
+            session.getTransaction().commit();
+
         }
     }
 

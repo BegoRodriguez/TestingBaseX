@@ -1,4 +1,4 @@
-package org.example;
+package xml;
 
 import java.io.*;
 import java.util.ArrayList;
